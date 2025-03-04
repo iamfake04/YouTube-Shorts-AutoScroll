@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Shorts AutoScroll",
+    "version": "1.0",
+    "description": "Automatically scroll through YouTube Shorts.",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "storage"
+    ],
+    "host_permissions": [
+      "https://www.youtube.com/shorts/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+      }
+    },
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/shorts/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
